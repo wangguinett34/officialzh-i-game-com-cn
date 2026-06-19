@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://wangguinett34.github.io/officialzh-i-game-com-cn/sitemap.xml
