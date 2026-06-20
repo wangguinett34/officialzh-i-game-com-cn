@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>九游 · 简明使用指南与访问说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #fafcff;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            color: #1e2a3a;
+            line-height: 1.7;
+            padding: 2rem 1.2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .page {
+            max-width: 720px;
+            width: 100%;
+        }
+
+        /* 标题 */
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.6rem;
+            color: #0b1a2f;
+            border-left: 4px solid #3d7eb3;
+            padding-left: 1rem;
+        }
+
+        .subhead {
+            font-size: 1.05rem;
+            color: #4a5c70;
+            margin-bottom: 2.4rem;
+            padding-left: 1rem;
+            border-left: 4px solid #b0c7da;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            font-weight: 450;
+            margin-top: 2.8rem;
+            margin-bottom: 0.75rem;
+            color: #1a2c3f;
+            border-bottom: 1px solid #dbe4ed;
+            padding-bottom: 0.3rem;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-top: 1.6rem;
+            margin-bottom: 0.5rem;
+            color: #2a4058;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            font-size: 1rem;
+        }
+
+        /* 卡片区域 */
+        .card-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin: 1.8rem 0;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 1.4rem 1.6rem;
+            flex: 1 1 180px;
+            box-shadow: 0 2px 8px rgba(0, 20, 40, 0.04);
+            border: 1px solid #e7edf4;
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 6px 16px rgba(35, 65, 100, 0.06);
+        }
+
+        .card-title {
+            font-weight: 550;
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+            color: #1e3a5a;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .card-title span {
+            display: inline-block;
+            background: #dce8f3;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            padding: 0.1rem 0.7rem;
+            color: #1f4569;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: #33465c;
+            margin-bottom: 0;
+        }
+
+        /* 使用提醒 / 警示框 */
+        .notice-box {
+            background: #f3f7fb;
+            border-radius: 20px;
+            padding: 1.4rem 1.8rem;
+            margin: 2rem 0;
+            border-left: 4px solid #3d7eb3;
+        }
+
+        .notice-box p {
+            margin-bottom: 0.4rem;
+        }
+
+        .notice-box strong {
+            color: #1a3f5f;
+        }
+
+        /* FAQ 摘要 */
+        .faq-item {
+            border-bottom: 1px solid #e1eaf2;
+            padding: 0.9rem 0;
+        }
+
+        .faq-question {
+            font-weight: 500;
+            color: #1d3557;
+            margin-bottom: 0.25rem;
+        }
+
+        .faq-answer {
+            color: #3d5470;
+            font-size: 0.95rem;
+            padding-left: 0.8rem;
+            border-left: 2px solid #c6d6e8;
+            margin-top: 0.2rem;
+        }
+
+        /* 链接样式 */
+        a {
+            color: #2c628b;
+            text-decoration: none;
+            border-bottom: 1px dotted #8aaecf;
+            transition: border 0.15s, color 0.15s;
+        }
+
+        a:hover {
+            color: #123b5e;
+            border-bottom: 1px solid #123b5e;
+        }
+
+        footer {
+            margin-top: 3.5rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid #d8e2ed;
+            font-size: 0.85rem;
+            color: #5a6e84;
+        }
+
+        /* 响应式 */
+        @media (max-width: 520px) {
+            body {
+                padding: 1.4rem 0.8rem;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+                padding-left: 0.7rem;
+            }
+
+            .subhead {
+                font-size: 0.95rem;
+                padding-left: 0.7rem;
+            }
+
+            .card {
+                flex: 1 1 100%;
+                padding: 1.2rem;
+            }
+
+            .notice-box {
+                padding: 1rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <h1>九游</h1>
+        <div class="subhead">简明指南 · 访问提醒 · 日常用法</div>
+
+        <p>
+            对许多移动端用户来说，<a href="https://m-app-9games.com">九游</a>代表着一种轻量、直接的内容聚合方式。它不强调复杂注册，也不刻意堆叠功能，而是把选择权交还给浏览者。本页整理了一些基础信息、适用场景和访问时的注意事项，帮助你更清楚它是否适合自己。
+        </p>
+
+        <h2>摘要：它解决什么问题</h2>
+        <p>
+            九游主要面向希望在手机端快速获取游戏资讯、试玩入口或社区讨论的用户。与大型应用商店不同，它的页面更精简，加载节奏较快，适合网络环境一般或偏好极简操作的人群。你可以把它理解为一个经过筛选的信息通道，而非无所不包的平台。
+        </p>
+
+        <h2>亮点与特点</h2>
+        <div class="card-grid">
+            <div class="card">
+                <div class="card-title">📱 移动优先 <span>适配</span></div>
+                <p>界面针对竖屏触摸优化，按钮和导航间距合理，单手操作友好。</p>
+            </div>
+            <div class="card">
+                <div class="card-title">🧭 低决策成本 <span>直接</span></div>
+                <p>不需要漫长的注册或资料填写，进入后即可浏览主要板块，减少中间步骤。</p>
+            </div>
+            <div class="card">
+                <div class="card-title">🔒 有限的信息暴露 <span>克制</span></div>
+                <p>不要求位置、通讯录等敏感权限，界面中无强制弹窗，浏览体验相对安静。</p>
+            </div>
+            <div class="card">
+                <div class="card-title">📦 内容密度适中 <span>不拥挤</span></div>
+                <p>每个页面展示条目数经过控制，避免信息过载，更适合碎片化阅读。</p>
+            </div>
+        </div>
+
+        <h2>适合的使用场景</h2>
+        <ul style="margin: 0.8rem 0 1.5rem 1.6rem; color: #2c405a; list-style: disc;">
+            <li>临时查找某款游戏的背景介绍或同类推荐。</li>
+            <li>在非主力设备（备用机、平板）上快速打开，不依赖多应用切换。</li>
+            <li>网络信号较弱时，希望页面能较快加载文字与缩略图。</li>
+            <li>不想被个性化算法过度追踪，仅获取固定板块内容。</li>
+        </ul>
+
+        <h2>访问提醒 · 可信但需留意</h2>
+        <div class="notice-box">
+            <p><strong>网络环境：</strong> 建议在稳定的 Wi-Fi 或移动网络下使用。部分页面资源（如预览图、视频）可能来自第三方 CDN，首次加载时请留意流量消耗。</p>
+            <p><strong>内容来源：</strong> 九游所展示的游戏介绍或链接大多基于公开信息整合，不保证实时同步所有官方更新。涉及下载或跳转时，建议自行核对开发者署名。</p>
+            <p><strong>隐私建议：</strong> 站内不强制收集信息，但若你在浏览过程中遇到非必要的授权请求（如位置、相机），请保持谨慎，可主动关闭或拒绝。</p>
+            <p><strong>账号逻辑：</strong> 九游本身不强制创建账号，部分互动功能（评论、收藏）可能依托于关联平台。使用前可先阅读对应页面的简短提示。</p>
+        </div>
+
+        <h2>常见疑问摘要</h2>
+        <div class="faq-item">
+            <div class="faq-question">Q：需要下载额外应用才能使用吗？</div>
+            <div class="faq-answer">不需要。通过手机浏览器打开 <a href="https://m-app-9games.com">九游</a> 即可，没有强制安装客户端的要求。当然，部分外部链接可能会引导至应用商店，这是由目标站点决定的。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Q：页面中的推荐内容更新频率如何？</div>
+            <div class="faq-answer">没有固定时间表，但通常按主题板块划分。热门游戏区更新较频繁，而一些经典库可能变化较慢。建议以实际显示为准。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Q：如何处理页面显示异常或加载不全？</div>
+            <div class="faq-answer">可尝试刷新页面，或检查浏览器是否启用了内容拦截插件。极少数情况下，清除缓存或更换浏览器（如 Chrome、Safari 标准模式）可以改善显示。</div>
+        </div>
+
+        <h2>使用建议</h2>
+        <p>
+            如果你只是偶尔浏览游戏资讯或寻找某个特定题材，<a href="https://m-app-9games.com">九游</a>可以作为一个低负担的参考站点。不必把它当作唯一信源，而是将它纳入你自己的信息组合当中。同时，由于移动端站点可能会不定期调整布局，初次使用时花一两分钟熟悉导航位置，后续体验会更顺畅。
+        </p>
+        <p>
+            最后，适度使用、保持对链接的留意，是访问任何网站的好习惯。本页仅作介绍，不构成对第三方内容的担保。
+        </p>
+
+        <footer>
+            <span>内容整理 · 面向普通浏览者 · 不构成推荐或保证</span>
+        </footer>
+    </div>
+</body>
+</html>
