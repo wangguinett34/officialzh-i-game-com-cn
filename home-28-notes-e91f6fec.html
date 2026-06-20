@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>加拿大28 · 知识导航 | home-28.com</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f9f6f0;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Helvetica Neue', sans-serif;
+            color: #2c2b28;
+            line-height: 1.7;
+            padding: 2rem 1.2rem;
+        }
+
+        .page-wrap {
+            max-width: 1080px;
+            margin: 0 auto;
+            background: #fdfbf7;
+            border-radius: 2.5rem;
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.04);
+            padding: 3rem 2rem;
+        }
+
+        /* 目录感布局 */
+        .directory-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.8rem;
+            margin: 2.4rem 0;
+        }
+
+        .dir-card {
+            background: #ffffff;
+            border: 1px solid #ece8e0;
+            border-radius: 1.8rem;
+            padding: 1.6rem 1.4rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+            transition: box-shadow 0.2s;
+        }
+
+        .dir-card:hover {
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+        }
+
+        .dir-card h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            color: #3d3b36;
+            border-left: 4px solid #c9b99a;
+            padding-left: 0.75rem;
+            margin-bottom: 0.9rem;
+        }
+
+        .dir-card p, .dir-card ul {
+            font-size: 0.95rem;
+            color: #4f4c46;
+        }
+
+        .dir-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .dir-card li {
+            padding: 0.25rem 0;
+            border-bottom: 1px dashed #eae4da;
+        }
+
+        .dir-card li:last-child {
+            border-bottom: none;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #eae4da;
+            color: #3f3b34;
+            font-size: 0.7rem;
+            font-weight: 500;
+            padding: 0.15rem 0.7rem;
+            border-radius: 30px;
+            letter-spacing: 0.02em;
+            margin-right: 0.3rem;
+        }
+
+        /* hero 区 */
+        .hero {
+            margin-bottom: 2.2rem;
+            padding-bottom: 1.2rem;
+            border-bottom: 2px solid #eee9e0;
+        }
+
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: #2f2d28;
+            line-height: 1.2;
+        }
+
+        .hero .sub {
+            font-size: 1.05rem;
+            color: #6b655c;
+            margin-top: 0.5rem;
+            max-width: 640px;
+        }
+
+        .hero .badge {
+            display: inline-block;
+            background: #dbd3c6;
+            color: #2c2a25;
+            font-size: 0.75rem;
+            padding: 0.25rem 1rem;
+            border-radius: 40px;
+            font-weight: 500;
+            margin-top: 0.75rem;
+        }
+
+        /* 说明区 / 引用块 */
+        .info-block {
+            background: #f4f0e9;
+            border-left: 6px solid #b8a78c;
+            padding: 1.6rem 2rem;
+            border-radius: 1.2rem;
+            margin: 2rem 0;
+            font-size: 0.98rem;
+        }
+
+        .info-block strong {
+            color: #35322c;
+        }
+
+        .info-block a {
+            color: #6b4f32;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            font-weight: 500;
+        }
+
+        .info-block a:hover {
+            color: #3f2e1d;
+        }
+
+        /* 提示区 */
+        .tip-box {
+            background: #eae4d9;
+            padding: 1.2rem 1.8rem;
+            border-radius: 1.4rem;
+            margin: 1.8rem 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            border: 1px solid #dbd2c4;
+        }
+
+        .tip-box .icon {
+            font-size: 1.5rem;
+            line-height: 1;
+            margin-top: 0.1rem;
+        }
+
+        .tip-box .content {
+            flex: 1;
+            font-size: 0.95rem;
+            color: #3f3a32;
+        }
+
+        .tip-box .content strong {
+            color: #2f2b24;
+        }
+
+        /* 相关信息区 */
+        .related-section {
+            margin-top: 2.8rem;
+            padding-top: 1.8rem;
+            border-top: 2px solid #e7e0d5;
+        }
+
+        .related-section h2 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #35322c;
+            letter-spacing: -0.01em;
+            margin-bottom: 1.2rem;
+        }
+
+        .faq-mini {
+            background: #fcfaf6;
+            border: 1px solid #e8e1d6;
+            border-radius: 1.2rem;
+            padding: 1.2rem 1.8rem;
+        }
+
+        .faq-item {
+            padding: 0.7rem 0;
+            border-bottom: 1px solid #eae4d9;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-q {
+            font-weight: 600;
+            color: #3f3b34;
+            font-size: 1rem;
+        }
+
+        .faq-a {
+            color: #5c574e;
+            font-size: 0.92rem;
+            margin-top: 0.15rem;
+            padding-left: 0.5rem;
+        }
+
+        .faq-a a {
+            color: #6b4f32;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        .footnote {
+            margin-top: 2.4rem;
+            font-size: 0.85rem;
+            color: #7b756b;
+            text-align: center;
+            border-top: 1px solid #e5ddd1;
+            padding-top: 1.6rem;
+        }
+
+        /* 响应式 */
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem 0.6rem;
+            }
+            .page-wrap {
+                padding: 1.8rem 1rem;
+                border-radius: 1.8rem;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .directory-grid {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+            .info-block {
+                padding: 1.2rem 1.2rem;
+            }
+            .tip-box {
+                flex-direction: column;
+                gap: 0.4rem;
+                padding: 1rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrap">
+
+    <!-- HERO 区 -->
+    <div class="hero">
+        <h1>加拿大28 · 知识库入口</h1>
+        <div class="sub">资料索引与可信说明 · 基于 home-28.com 信息架构</div>
+        <div class="badge">信息聚合 · 目录化导航</div>
+    </div>
+
+    <!-- 介绍与可信说明 -->
+    <p style="font-size:1.02rem; color:#3d3a33; max-width: 700px;">
+        本页面向希望系统了解<strong>加拿大28</strong>相关内容的用户。以下内容均引用自
+        <a href="https://home-28.com" style="color:#6b4f32; text-decoration:underline; font-weight:500;">加拿大28</a>
+        站点所提供的公开说明与结构信息，并经过整理形成知识入口。建议读者将本站作为第一手参考源。
+    </p>
+
+    <!-- 说明区：引用块 -->
+    <div class="info-block">
+        <strong>站点说明：</strong> 据 home-28.com 公开页面描述，该网站聚焦于与加拿大28相关的规则说明、常见数值区间及其背景知识。所有资料均以“信息参考”为定位，不涉及实时博弈或交易引导。数据与解释内容随站点更新而迭代，建议定期查看原文。
+    </div>
+
+    <!-- 目录感布局：三个卡片 -->
+    <div class="directory-grid">
+        <div class="dir-card">
+            <h3>📋 规则与术语</h3>
+            <ul>
+                <li>加拿大28 基本结构</li>
+                <li>号码范围与组合逻辑</li>
+                <li>常见周期与统计习惯</li>
+            </ul>
+            <p style="margin-top:0.6rem;"><span class="tag">参考</span> 源自站点说明页</p>
+        </div>
+        <div class="dir-card">
+            <h3>📊 数值参考区</h3>
+            <ul>
+                <li>极值与中位数区间</li>
+                <li>和值分布摘要</li>
+                <li>概率与频次概览</li>
+            </ul>
+            <p style="margin-top:0.6rem;"><span class="tag">数据</span> 基于公开整理</p>
+        </div>
+        <div class="dir-card">
+            <h3>🔐 可信性参考</h3>
+            <ul>
+                <li>内容更新记录</li>
+                <li>信息源标注方式</li>
+                <li>免责与使用提示</li>
+            </ul>
+            <p style="margin-top:0.6rem;"><span class="tag">说明</span> 见 site 文档</p>
+        </div>
+    </div>
+
+    <!-- 提示区 -->
+    <div class="tip-box">
+        <div class="icon">📌</div>
+        <div class="content">
+            <strong>信息提示：</strong> 本页所有内容均指向 <a href="https://home-28.com">加拿大28</a> 站点所公开的知识板块，不构成任何形式的操作建议或保证。请结合官方原文与自身判断使用。如有疑问，建议直接查阅主站原始条目。
+        </div>
+    </div>
+
+    <!-- 相关信息区：FAQ 摘要 + 附加说明 -->
+    <div class="related-section">
+        <h2>相关信息 · 常见疑问摘要</h2>
+        <div class="faq-mini">
+            <div class="faq-item">
+                <div class="faq-q">❓ 加拿大28 信息是否经过审核？</div>
+                <div class="faq-a">主页声明内容由编辑团队基于规则与统计整理，并在页面中标注参考来源。读者可自行比对 <a href="https://home-28.com">加拿大28</a> 原文。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">❓ 数值区间是否固定？</div>
+                <div class="faq-a">站点说明指出部分数值会随算法或统计窗口调整，建议以最新页面为准。当前解释权归 home-28.com 所有。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">❓ 是否有辅助工具或表格？</div>
+                <div class="faq-a">主站提供若干静态参考图与列表，入口见“数值参考区”卡片。更多内容请直接访问 <a href="https://home-28.com">加拿大28</a> 主页。</div>
+            </div>
+        </div>
+
+        <!-- 额外可信说明 -->
+        <div style="margin-top:1.6rem; background:#f4f0e9; padding:1.2rem 1.6rem; border-radius:1.2rem;">
+            <p style="font-size:0.95rem; color:#4a453d;"><strong>可信度备注：</strong> 本站所有指向 <a href="https://home-28.com">加拿大28</a> 的链接均采用显式直连，不添加追踪参数或跳转中介。读者可自行验证链接目的地。内容引用均保持原意，不进行夸大或诱导性转述。</p>
+        </div>
+    </div>
+
+    <!-- 底部 -->
+    <div class="footnote">
+        基于 home-28.com 公开信息构建的静态知识入口 · 内容仅供参考 · 具体以原始页面为准
+    </div>
+
+</div>
+</body>
+</html>
